@@ -1,0 +1,29 @@
+[package]
+name = "aerogram-smtp"
+description = "Aerogram SMTP listener and client: inbound RFC 5321, outbound delivery with STARTTLS and AUTH."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+aerogram-config = { path = "../aerogram-config", version = "0.1.0" }
+aerogram-dkim = { path = "../aerogram-dkim", version = "0.1.0" }
+aerogram-queue = { path = "../aerogram-queue", version = "0.1.0" }
+async-trait = { workspace = true }
+hickory-resolver = { workspace = true }
+lettre = { workspace = true }
+rustls = { workspace = true }
+tokio = { workspace = true }
+tokio-rustls = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

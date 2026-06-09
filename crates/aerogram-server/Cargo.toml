@@ -1,0 +1,40 @@
+[package]
+name = "aerogram-server"
+description = "Aerogram composition root: wires every crate into a single runnable server lifecycle."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+aerogram-config = { path = "../aerogram-config", version = "0.1.0" }
+aerogram-dkim = { path = "../aerogram-dkim", version = "0.1.0" }
+aerogram-spf-dmarc = { path = "../aerogram-spf-dmarc", version = "0.1.0" }
+aerogram-queue = { path = "../aerogram-queue", version = "0.1.0" }
+aerogram-store = { path = "../aerogram-store", version = "0.1.0" }
+aerogram-search = { path = "../aerogram-search", version = "0.1.0" }
+aerogram-spam = { path = "../aerogram-spam", version = "0.1.0" }
+aerogram-events = { path = "../aerogram-events", version = "0.1.0" }
+aerogram-auth = { path = "../aerogram-auth", version = "0.1.0" }
+aerogram-smtp = { path = "../aerogram-smtp", version = "0.1.0" }
+aerogram-jmap = { path = "../aerogram-jmap", version = "0.1.0" }
+aerogram-imap = { path = "../aerogram-imap", version = "0.1.0" }
+aerogram-api = { path = "../aerogram-api", version = "0.1.0" }
+aerogram-admin = { path = "../aerogram-admin", version = "0.1.0" }
+tokio = { workspace = true }
+tracing = { workspace = true }
+anyhow = { workspace = true }
+
+[features]
+default = []
+s3 = ["aerogram-store/s3"]
+hexeract = ["aerogram-events/hexeract"]
+
+[lints]
+workspace = true

@@ -1,0 +1,29 @@
+[package]
+name = "aerogram-store"
+description = "Aerogram message store: PostgreSQL metadata, filesystem or S3-compatible blobs."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+async-trait = { workspace = true }
+sqlx = { workspace = true }
+tokio = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+aws-sdk-s3 = { workspace = true, optional = true }
+aws-config = { workspace = true, optional = true }
+
+[features]
+default = []
+s3 = ["dep:aws-sdk-s3", "dep:aws-config"]
+
+[lints]
+workspace = true

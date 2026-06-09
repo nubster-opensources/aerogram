@@ -1,0 +1,29 @@
+[package]
+name = "aerogram-api"
+description = "Aerogram transactional REST API: POST /v1/messages, suppressions, webhooks HMAC."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+aerogram-queue = { path = "../aerogram-queue", version = "0.1.0" }
+aerogram-auth = { path = "../aerogram-auth", version = "0.1.0" }
+aerogram-events = { path = "../aerogram-events", version = "0.1.0" }
+axum = { workspace = true }
+tower-http = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+hmac = { workspace = true }
+sha2 = { workspace = true }
+base64 = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

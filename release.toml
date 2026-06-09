@@ -1,0 +1,20 @@
+# cargo-release configuration (https://github.com/crate-ci/cargo-release).
+#
+# This config tells cargo-release to bump every workspace crate to the
+# same version in a single commit, but to NOT publish, tag or push. The
+# rest of the release pipeline is owned by scripts/release.sh (which
+# handles the CHANGELOG graduation and opens the PR) and by
+# .github/workflows/release.yml (which publishes to crates.io and creates
+# the GitHub Release once the human pushes the tag).
+
+allow-branch = ["release/*"]
+shared-version = true
+consolidate-commits = true
+publish = false
+tag = false
+push = false
+dev-version = false
+sign-commit = false
+sign-tag = false
+
+pre-release-commit-message = "release(v{{version}}): bump workspace to {{version}}"

@@ -1,0 +1,21 @@
+[package]
+name = "aerogram-search"
+description = "Aerogram full-text search over headers and bodies, backed by tantivy."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+tantivy = { workspace = true }
+thiserror = { workspace = true }
+serde = { workspace = true }
+
+[lints]
+workspace = true

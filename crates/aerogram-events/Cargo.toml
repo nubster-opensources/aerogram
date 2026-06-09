@@ -1,0 +1,29 @@
+[package]
+name = "aerogram-events"
+description = "Aerogram outgoing events: CloudEvents v1.0 emission, optional Hexeract Outbox adapter."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]
+aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
+async-trait = { workspace = true }
+chrono = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+hexeract-outbox = { workspace = true, optional = true }
+
+[features]
+default = []
+hexeract = ["dep:hexeract-outbox"]
+
+[lints]
+workspace = true
