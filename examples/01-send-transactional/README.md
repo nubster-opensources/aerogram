@@ -1,6 +1,6 @@
 # Example 01: send a transactional message
 
-> Targeted for milestone **M1–M2**. Not runnable yet.
+> Targeted for milestone **M1 - M2**. Not runnable yet.
 
 This example shows the minimal path a backend application takes to send a transactional message through Aerogram:
 

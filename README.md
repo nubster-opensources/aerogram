@@ -1,6 +1,6 @@
 # Aerogram
 
-> Sovereign Rust email server: SMTP MTA, JMAP, IMAP, transactional API, DKIM/SPF/DMARC, multi-tenant, with no vendor lock-in.
+> Self-hosted Rust email server: SMTP MTA, JMAP, IMAP, transactional API, DKIM/SPF/DMARC, multi-tenant, with no vendor lock-in.
 
 [![crates.io](https://img.shields.io/crates/v/aerogram.svg?label=crates.io)](https://crates.io/crates/aerogram)
 [![docs.rs](https://img.shields.io/docsrs/aerogram?label=docs.rs)](https://docs.rs/aerogram)
@@ -23,7 +23,7 @@ The repository is intentionally public from day one to capture the name and make
 | Feature | v0.1.0 |
 | --- | --- |
 | Outbound SMTP and DKIM signing (Ed25519, RSA-SHA256) | ⏳ M1 |
-| Transactional API (`POST /v1/messages`, webhooks HMAC-SHA-256) | ⏳ M1–M2 |
+| Transactional API (`POST /v1/messages`, webhooks HMAC-SHA-256) | ⏳ M1 - M2 |
 | CloudEvents emission with optional Hexeract Outbox adapter | ⏳ M2 |
 | Inbound SMTP with STARTTLS, DKIM/SPF/DMARC verification | ⏳ M3 |
 | Metadata store (PostgreSQL) and blob store (filesystem default, S3-compatible) | ⏳ M4 |
@@ -93,14 +93,19 @@ To stay focused, the following are explicitly out of scope:
 ## Audience
 
 - **Self-hosted operators** running their own mail infrastructure and looking for a maintainable Rust alternative to a stack of C and Perl daemons.
-- **Sovereignty-driven teams** (EU regulated industries, public sector, defence contractors) needing a transactional API outside US-headquartered providers.
+- **Teams running their own infrastructure** who need a transactional API without relying on external mail providers.
 - **Application teams** dogfooding the Nubster product family and looking to retire their dependency on a third-party transactional mail provider without giving up on JMAP and IMAP for their human users.
+
+## Documentation
+
+- [ROADMAP.md](./ROADMAP.md) - milestone-by-milestone trajectory to v1.0
+- [CHANGELOG.md](./CHANGELOG.md) - published release history
+- [docs/SEMVER_POLICY.md](./docs/SEMVER_POLICY.md) - versioning guarantees
+- [docs/MSRV_POLICY.md](./docs/MSRV_POLICY.md) - minimum supported Rust version policy
 
 ## Contributing
 
 Contributions are welcome. Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) first for the workflow and conventions, and [`CODE_OF_CONDUCT.md`](./CODE_OF_CONDUCT.md) for the community guidelines. For vulnerability reports, see [`SECURITY.md`](./SECURITY.md). For open-ended questions and design conversations, use [GitHub Discussions](https://github.com/nubster-opensources/aerogram/discussions).
-
-Stability and versioning are documented in [`docs/SEMVER_POLICY.md`](./docs/SEMVER_POLICY.md) and [`docs/MSRV_POLICY.md`](./docs/MSRV_POLICY.md).
 
 ## License
 

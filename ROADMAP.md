@@ -28,53 +28,53 @@ crosses one of them, it belongs in another project.
 
 **Goal.** A self-hosted operator runs a single binary that signs and sends outbound mail, receives incoming mail with DKIM/SPF/DMARC validation, stores mailboxes, exposes JMAP and IMAP clients, offers a transactional REST API for application use, scores spam natively, authenticates the admin through any OIDC provider and surfaces a minimal SSR webmail and admin dashboard.
 
-**M0 – Foundation.**
+**M0 - Foundation.**
 - Cargo workspace with seventeen crates, MSRV 1.88, dual MIT/Apache-2.0 licence.
 - CI green on three OS, supply chain scan and audit clean.
 - Documentation skeleton (`README`, `CONTRIBUTING`, `SECURITY`, `ROADMAP`, `docs/`).
 - Single binary `aerogram` with CLI sub-commands (`start`, `init`, `version`, `migrate`).
 
-**M1 – Outbound SMTP and DKIM.**
+**M1 - Outbound SMTP and DKIM.**
 - SMTP client with STARTTLS, AUTH PLAIN/LOGIN, return-path tracking.
 - DKIM signing in Ed25519 (RFC 8463) and RSA-SHA256 (RFC 6376).
 - Persistent queue (PostgreSQL) with exponential backoff retry and dead-letter routing.
 - Transactional API `POST /v1/messages` returning a message identifier.
 
-**M2 – Events and webhooks.**
+**M2 - Events and webhooks.**
 - Outgoing events serialised in CloudEvents v1.0 (JSON).
 - Webhook delivery signed with HMAC-SHA-256, retried on failure.
 - Suppression list per tenant for hard bounces and complaints.
 - Optional Hexeract Outbox adapter, gated by a feature flag.
 
-**M3 – Inbound SMTP and validation.**
+**M3 - Inbound SMTP and validation.**
 - SMTP server with STARTTLS, AUTH SASL, command pipelining and MTA-STS (RFC 8461) and TLS-RPT (RFC 8460).
 - DKIM verification, SPF (RFC 7208), DMARC (RFC 7489) and optional ARC (RFC 8617).
 - Message landing in the metadata store with the corresponding blob persisted to the configured blob backend.
 
-**M4 – Store and search.**
+**M4 - Store and search.**
 - Metadata store on PostgreSQL with multi-tenant isolation.
 - Blob store with filesystem backend by default, S3-compatible backend gated by a feature flag (`s3`).
 - Full-text search index over headers and bodies via `tantivy`.
 
-**M5 / M6 – JMAP and IMAP.**
+**M5 / M6 - JMAP and IMAP.**
 - JMAP server (RFC 8620 + RFC 8621) covering `Mailbox`, `Email`, `Identity`, `EmailSubmission` and `SearchSnippet`.
 - IMAP4rev2 (RFC 9051) compat shim exposing the JMAP backend through the IMAP wire protocol, supporting `CAPABILITY`, `LOGIN`, `SELECT`, `FETCH`, `STORE`, `APPEND`, `IDLE` and `SEARCH`.
 
-**M7 – Native antispam.**
+**M7 - Native antispam.**
 - Bayesian classifier with on-disk corpus.
 - DNS blocklist lookups with per-tenant policy.
 - Greylisting and heuristics, with progressive port of SpamAssassin-compatible rules.
 
-**M8 – Auth and provisioning.**
+**M8 - Auth and provisioning.**
 - OIDC client (RFC 6749 / OpenID Connect Core 1.0) with discovery and JWKS validation.
 - SCIM 2.0 (RFC 7643 / 7644) endpoint for cross-IdP mailbox provisioning.
 - No-lock-in test: the full stack runs against a standards-compliant OIDC provider, PostgreSQL and RabbitMQ without installing any other Nubster brick.
 
-**M9 – Webmail and admin.**
+**M9 - Webmail and admin.**
 - Minimal SSR webmail (Askama + HTMX): inbox, message view, send.
 - Admin dashboard (Askama + HTMX): tenants, mailboxes, domains, DKIM keys, queue, deliverability events.
 
-**M10 – Release polish.**
+**M10 - Release polish.**
 - Public Rust API surface frozen for the v0.1 line.
 - Security audit and fuzzing harness for SMTP and JMAP parsers.
 - Release process documented (`docs/RELEASE_PROCESS.md`).
