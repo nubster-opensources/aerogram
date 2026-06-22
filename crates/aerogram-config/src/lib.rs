@@ -58,7 +58,7 @@ pub struct ServerConfig {
     pub smtp_submission_bind: String,
     /// Bind for the implicit TLS submission listener on port 465.
     pub smtp_submission_tls_bind: String,
-    /// Bind for the IMAP4rev2 listener on port 993.
+    /// Bind for the `IMAP4rev2` listener on port 993.
     pub imap_bind: String,
     /// Bind for the HTTP listener serving JMAP, API, admin and webmail.
     pub http_bind: String,
@@ -118,7 +118,7 @@ pub struct QueueConfig {
 /// Authentication configuration.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct AuthConfig {
-    /// OIDC issuer URL (any RFC 6749 / OpenID Connect compliant provider).
+    /// OIDC issuer URL (any `RFC 6749` / OpenID Connect compliant provider).
     pub oidc_issuer: String,
     /// OIDC client identifier for the admin and API surfaces.
     pub oidc_client_id: String,

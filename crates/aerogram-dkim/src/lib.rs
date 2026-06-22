@@ -66,6 +66,7 @@ impl DkimVerifier {
     ///
     /// Returns [`DkimError::Verify`] when the verification fails for any
     /// of the signatures or when the DNS lookup fails.
+    #[allow(clippy::unused_async)]
     pub async fn verify(&self, _message: &[u8]) -> Result<DkimResult, DkimError> {
         unimplemented!("M3: signature only")
     }

@@ -14,7 +14,7 @@ pub struct ApiServer;
 
 impl ApiServer {
     /// Returns an axum router exposing the API endpoints.
-    #[must_use]
+    #[must_use = "the router must be mounted on the application"]
     pub fn router(&self) -> axum::Router {
         axum::Router::new()
     }
@@ -34,7 +34,9 @@ impl WebhookSigner {
     /// Builds a signer from the configured shared secret.
     #[must_use]
     pub fn new(secret: impl Into<Vec<u8>>) -> Self {
-        Self { _secret: secret.into() }
+        Self {
+            _secret: secret.into(),
+        }
     }
 
     /// Computes the `X-Aerogram-Signature` header value for the given raw

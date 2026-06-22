@@ -26,6 +26,7 @@ enum Command {
     GenDocs,
 }
 
+#[allow(clippy::unnecessary_wraps)]
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     match cli.command {
