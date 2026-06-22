@@ -39,7 +39,9 @@ impl SpamScorer {
     /// Builds a scorer scoped to a single tenant.
     #[must_use]
     pub fn new(tenant_id: TenantId) -> Self {
-        Self { _tenant_id: tenant_id }
+        Self {
+            _tenant_id: tenant_id,
+        }
     }
 
     /// Scores an inbound message. Errors only when a hard backend failure
@@ -49,6 +51,7 @@ impl SpamScorer {
     ///
     /// Returns [`SpamError::Backend`] when no component can produce a
     /// result.
+    #[allow(clippy::unused_async)]
     pub async fn score(
         &self,
         _envelope_from: &str,
@@ -69,6 +72,7 @@ impl BayesianClassifier {
     /// # Errors
     ///
     /// Returns [`SpamError::Backend`] when the corpus cannot be loaded.
+    #[allow(clippy::unused_async)]
     pub async fn classify(&self, _message: &[u8]) -> Result<SpamScore, SpamError> {
         unimplemented!("M7: signature only")
     }
@@ -84,6 +88,7 @@ impl DnsblChecker {
     /// # Errors
     ///
     /// Returns [`SpamError::Backend`] when DNS resolution fails.
+    #[allow(clippy::unused_async)]
     pub async fn check(&self, _ip: IpAddr) -> Result<SpamScore, SpamError> {
         unimplemented!("M7: signature only")
     }
@@ -100,12 +105,8 @@ impl GreylistTracker {
     /// # Errors
     ///
     /// Returns [`SpamError::Backend`] when the database is unreachable.
-    pub async fn was_seen(
-        &self,
-        _from: &str,
-        _to: &str,
-        _ip: IpAddr,
-    ) -> Result<bool, SpamError> {
+    #[allow(clippy::unused_async)]
+    pub async fn was_seen(&self, _from: &str, _to: &str, _ip: IpAddr) -> Result<bool, SpamError> {
         unimplemented!("M7: signature only")
     }
 }

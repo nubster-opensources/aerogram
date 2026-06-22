@@ -27,6 +27,7 @@ impl Server {
     ///
     /// Returns [`anyhow::Error`] when any listener or worker fails to
     /// start.
+    #[allow(clippy::unused_async)]
     pub async fn run(self, _shutdown: ShutdownSignal) -> anyhow::Result<()> {
         unimplemented!("M0: signature only")
     }

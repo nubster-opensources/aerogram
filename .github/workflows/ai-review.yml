@@ -1,0 +1,27 @@
+name: AI Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  team:
+    uses: nubster-opensources/.github/.github/workflows/ai-review.yml@main
+    with:
+      pr-number: ${{ github.event.pull_request.number }}
+      mode: team
+    secrets:
+      mistral-api-key: ${{ secrets.MISTRAL_API_KEY }}
+
+  describe:
+    uses: nubster-opensources/.github/.github/workflows/ai-review.yml@main
+    with:
+      pr-number: ${{ github.event.pull_request.number }}
+      mode: describe
+    secrets:
+      mistral-api-key: ${{ secrets.MISTRAL_API_KEY }}

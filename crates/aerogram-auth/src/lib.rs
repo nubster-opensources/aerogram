@@ -19,7 +19,10 @@ pub struct OidcClient {
 impl OidcClient {
     /// Builds an OIDC client for the given issuer and client identifier.
     pub fn new(issuer: impl Into<String>, client_id: impl Into<String>) -> Self {
-        Self { _issuer: issuer.into(), _client_id: client_id.into() }
+        Self {
+            _issuer: issuer.into(),
+            _client_id: client_id.into(),
+        }
     }
 }
 
@@ -32,7 +35,9 @@ pub struct JwksValidator {
 impl JwksValidator {
     /// Builds a validator for tokens issued by the given OIDC issuer.
     pub fn new(issuer: impl Into<String>) -> Self {
-        Self { _issuer: issuer.into() }
+        Self {
+            _issuer: issuer.into(),
+        }
     }
 
     /// Validates the given JWT against the issuer's JWKS and returns the
@@ -42,6 +47,7 @@ impl JwksValidator {
     ///
     /// Returns [`AuthError::InvalidToken`] when the token cannot be
     /// validated.
+    #[allow(clippy::unused_async)]
     pub async fn validate(&self, _token: &str) -> Result<TenantClaim, AuthError> {
         unimplemented!("M8: signature only")
     }
@@ -68,7 +74,7 @@ pub struct ScimEndpoint;
 
 impl ScimEndpoint {
     /// Returns an axum router exposing the SCIM 2.0 endpoints.
-    #[must_use]
+    #[must_use = "the router must be mounted on the application"]
     pub fn router(&self) -> axum::Router {
         axum::Router::new()
     }

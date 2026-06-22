@@ -42,6 +42,7 @@ impl SpfChecker {
     /// Returns [`SpfDmarcError::Dns`] when the DNS lookup fails in a way
     /// that cannot be encoded as a [`SpfResult::TempError`] or
     /// [`SpfResult::PermError`].
+    #[allow(clippy::unused_async)]
     pub async fn check(&self, _domain: &str, _ip: IpAddr) -> Result<SpfResult, SpfDmarcError> {
         unimplemented!("M3: signature only")
     }
@@ -69,6 +70,7 @@ impl DmarcEvaluator {
     /// # Errors
     ///
     /// Returns [`SpfDmarcError::Dns`] when the DNS lookup fails.
+    #[allow(clippy::unused_async)]
     pub async fn evaluate(
         &self,
         _from_domain: &str,
@@ -90,6 +92,7 @@ impl ArcVerifier {
     ///
     /// Returns [`SpfDmarcError::Arc`] when the chain is malformed or fails
     /// cryptographic verification.
+    #[allow(clippy::unused_async)]
     pub async fn verify(&self, _message: &[u8]) -> Result<ArcResult, SpfDmarcError> {
         unimplemented!("M3: signature only")
     }

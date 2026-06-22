@@ -87,7 +87,10 @@ pub struct Queue<S> {
 impl<S> Queue<S> {
     /// Builds a queue facade from a store and a backoff policy.
     pub fn new(store: S, policy: BackoffPolicy) -> Self {
-        Self { _store: store, _policy: policy }
+        Self {
+            _store: store,
+            _policy: policy,
+        }
     }
 }
 

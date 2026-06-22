@@ -52,6 +52,7 @@ impl SmtpClient {
     /// # Errors
     ///
     /// Returns [`SmtpError::Transport`] when the delivery fails.
+    #[allow(clippy::unused_async)]
     pub async fn deliver(
         &self,
         _tenant_id: TenantId,

@@ -14,7 +14,7 @@ pub struct JmapServer;
 
 impl JmapServer {
     /// Returns an axum router exposing the JMAP endpoints.
-    #[must_use]
+    #[must_use = "the router must be mounted on the application"]
     pub fn router(&self) -> axum::Router {
         axum::Router::new()
     }
