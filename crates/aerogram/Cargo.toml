@@ -1,6 +1,6 @@
 [package]
 name = "aerogram"
-description = "Aerogram binary entry point: CLI for the sovereign Rust mail server."
+description = "Aerogram binary entry point: CLI for the self-hosted Rust mail server."
 version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
