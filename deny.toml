@@ -8,7 +8,15 @@ all-features = true
 version = 2
 db-urls = ["https://github.com/rustsec/advisory-db"]
 yanked = "deny"
-ignore = []
+# Transitive advisories in the pre-alpha scaffold, tracked for remediation in issue #1.
+ignore = [
+    "RUSTSEC-2023-0071", # rsa Marvin Attack: no fixed upstream version published yet.
+    "RUSTSEC-2024-0384", # instant unmaintained: pulled transitively.
+    "RUSTSEC-2026-0119", # O(n^2) name compression: awaiting a patched proto release.
+    "RUSTSEC-2026-0098", # webpki name constraints: awaiting a patched release.
+    "RUSTSEC-2026-0099", # webpki wildcard name constraints: awaiting a patched release.
+    "RUSTSEC-2026-0104", # webpki CRL parsing panic: awaiting a patched release.
+]
 
 [bans]
 multiple-versions = "warn"
@@ -33,6 +41,7 @@ allow = [
     "CC0-1.0",
     "MPL-2.0",
     "CDLA-Permissive-2.0",
+    "0BSD",
 ]
 exceptions = []
 

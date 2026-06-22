@@ -14,7 +14,7 @@ use clap::{Parser, Subcommand};
 #[command(
     name = "aerogram",
     version,
-    about = "Sovereign Rust email server: SMTP, JMAP, IMAP, transactional API."
+    about = "Self-hosted Rust email server: SMTP, JMAP, IMAP, transactional API."
 )]
 pub struct Cli {
     /// Subcommand to execute.
