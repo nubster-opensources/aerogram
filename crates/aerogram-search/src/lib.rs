@@ -45,7 +45,9 @@ impl IndexBuilder {
     /// Creates a new builder for the given tenant.
     #[must_use]
     pub fn new(tenant_id: TenantId) -> Self {
-        Self { _tenant_id: tenant_id }
+        Self {
+            _tenant_id: tenant_id,
+        }
     }
 }
 
@@ -84,7 +86,10 @@ mod tests {
 
     #[test]
     fn query_serde_roundtrip() {
-        let q = Query { q: "subject:hello".to_string(), limit: 25 };
+        let q = Query {
+            q: "subject:hello".to_string(),
+            limit: 25,
+        };
         let json = serde_json::to_string(&q).expect("serialize");
         assert!(json.contains("subject:hello"));
     }

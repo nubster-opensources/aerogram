@@ -62,7 +62,9 @@ impl S3BlobStore {
     /// Builds an S3-compatible blob store targeting the given bucket.
     #[must_use]
     pub fn new(bucket: impl Into<String>) -> Self {
-        Self { _bucket: bucket.into() }
+        Self {
+            _bucket: bucket.into(),
+        }
     }
 }
 
