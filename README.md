@@ -36,7 +36,7 @@ The repository is intentionally public from day one to capture the name and make
 
 See the [ROADMAP](./ROADMAP.md) for the detailed trajectory and the [CHANGELOG](./CHANGELOG.md) for the published history.
 
-## Quickstart
+## Quick start
 
 > Pre-alpha. Nothing below works end to end yet. This section illustrates the targeted experience for v0.1.0.
 
