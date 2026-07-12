@@ -73,7 +73,7 @@ tokio-rustls = "0.26"
 ed25519-dalek = { version = "2", features = ["rand_core", "pkcs8"] }
 rsa = { version = "0.9", features = ["sha2"] }
 sha2 = "0.10"
-hmac = "0.12"
+hmac = "0.13"
 base64 = "0.22"
 jsonwebtoken = "9"
 
