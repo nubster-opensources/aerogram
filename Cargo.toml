@@ -75,7 +75,7 @@ rsa = { version = "0.9", features = ["sha2"] }
 sha2 = "0.10"
 hmac = "0.12"
 base64 = "0.22"
-jsonwebtoken = "9"
+jsonwebtoken = "10"
 
 # email primitives
 mail-parser = "0.9"
