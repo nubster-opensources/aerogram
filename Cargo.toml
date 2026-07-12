@@ -86,7 +86,7 @@ lettre = { version = "0.11", default-features = false, features = ["builder", "t
 hickory-resolver = { version = "0.24", default-features = false, features = ["tokio-runtime", "system-config"] }
 
 # storage
-tantivy = "0.22"
+tantivy = "0.26"
 aws-sdk-s3 = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 aws-config = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 
