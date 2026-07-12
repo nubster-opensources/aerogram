@@ -1734,10 +1734,11 @@ checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
 
 [[package]]
 name = "hexeract-core"
-version = "0.1.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf7d82d05cf40c90e8ddae48c5f186ba7203ef6a7ae203ce3deeff10cccaa1ec"
+checksum = "91adcc50315e6081ab315c6fe9113b39a543b68589d7c03fe18d1dc32994c6b2"
 dependencies = [
+ "inventory",
  "thiserror 2.0.18",
  "tokio-util",
  "tracing",
@@ -1747,11 +1748,12 @@ dependencies = [
 
 [[package]]
 name = "hexeract-outbox"
-version = "0.1.0"
+version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dbb6945813c7c20f7d663b7804ded0dcd7ee545eebe136ce6bedc5868091a814"
+checksum = "d5f0567339a9d20907db7c2293a044a724b7b6aaacd5af9414674ed3e1791edb"
 dependencies = [
  "async-trait",
+ "fastrand",
  "hexeract-core",
  "serde",
  "serde_json",
@@ -2181,6 +2183,15 @@ dependencies = [
  "js-sys",
  "wasm-bindgen",
  "web-sys",
+]
+
+[[package]]
+name = "inventory"
+version = "0.3.24"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a4f0c30c76f2f4ccee3fe55a2435f691ca00c0e4bd87abe4f4a851b1d4dac39b"
+dependencies = [
+ "rustversion",
 ]
 
 [[package]]

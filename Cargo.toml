@@ -103,7 +103,7 @@ humantime-serde = "1"
 
 # nubster ecosystem (default convenient option, optional features)
 hexeract = "0.1"
-hexeract-outbox = "0.1"
+hexeract-outbox = "0.6"
 hexeract-outbox-postgres = "0.1"
 
 # dev
