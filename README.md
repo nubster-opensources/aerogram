@@ -34,7 +34,7 @@ The repository is intentionally public from day one to capture the name and make
 | SSR webmail and admin dashboard (Askama + HTMX) | ⏳ M9 |
 | Release polish, security audit and fuzzing | ⏳ M10 |
 
-See the [ROADMAP](./ROADMAP.md) for the detailed trajectory and the [CHANGELOG](./CHANGELOG.md) for the published history.
+See the [roadmap](./docs/explanation/roadmap.md) for the detailed trajectory and the [CHANGELOG](./CHANGELOG.md) for the published history.
 
 ## Quickstart
 
@@ -98,7 +98,7 @@ To stay focused, the following are explicitly out of scope:
 
 ## Documentation
 
-- [ROADMAP.md](./ROADMAP.md) - milestone-by-milestone trajectory to v1.0
+- [docs/explanation/roadmap.md](./docs/explanation/roadmap.md) - milestone-by-milestone trajectory to v1.0
 - [CHANGELOG.md](./CHANGELOG.md) - published release history
 - [docs/SEMVER_POLICY.md](./docs/SEMVER_POLICY.md) - versioning guarantees
 - [docs/MSRV_POLICY.md](./docs/MSRV_POLICY.md) - minimum supported Rust version policy
