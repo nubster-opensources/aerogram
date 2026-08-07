@@ -59,7 +59,7 @@ chrono = { version = "0.4", default-features = false, features = ["serde", "cloc
 # http stack
 axum = { version = "0.7", features = ["macros", "multipart"] }
 tower = "0.5"
-tower-http = { version = "0.6", features = ["trace", "cors", "limit", "timeout"] }
+tower-http = { version = "0.7", features = ["trace", "cors", "limit", "timeout"] }
 hyper = { version = "1", features = ["full"] }
 reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json", "stream"] }
 
@@ -72,10 +72,10 @@ rustls-pemfile = "2"
 tokio-rustls = "0.26"
 ed25519-dalek = { version = "2", features = ["rand_core", "pkcs8"] }
 rsa = { version = "0.9", features = ["sha2"] }
-sha2 = "0.10"
-hmac = "0.12"
+sha2 = "0.11"
+hmac = "0.13"
 base64 = "0.22"
-jsonwebtoken = "9"
+jsonwebtoken = "10"
 
 # email primitives
 mail-parser = "0.9"
@@ -86,7 +86,7 @@ lettre = { version = "0.11", default-features = false, features = ["builder", "t
 hickory-resolver = { version = "0.24", default-features = false, features = ["tokio-runtime", "system-config"] }
 
 # storage
-tantivy = "0.22"
+tantivy = "0.26"
 aws-sdk-s3 = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 aws-config = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 
@@ -103,7 +103,7 @@ humantime-serde = "1"
 
 # nubster ecosystem (default convenient option, optional features)
 hexeract = "0.1"
-hexeract-outbox = "0.1"
+hexeract-outbox = "0.6"
 hexeract-outbox-postgres = "0.1"
 
 # dev
