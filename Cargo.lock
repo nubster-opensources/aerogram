@@ -36,7 +36,7 @@ dependencies = [
  "aerogram-events",
  "aerogram-queue",
  "axum",
- "base64 0.22.1",
+ "base64 0.23.1",
  "hmac 0.13.0",
  "serde",
  "serde_json",
@@ -87,7 +87,7 @@ name = "aerogram-dkim"
 version = "0.1.0"
 dependencies = [
  "aerogram-core",
- "base64 0.22.1",
+ "base64 0.23.1",
  "ed25519-dalek",
  "hickory-resolver",
  "rsa",
