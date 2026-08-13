@@ -1,0 +1,14 @@
+name: Verify GitHub Action pins
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: nubster-opensources/.github/.github/workflows/verify-action-pinning.yml@main
