@@ -13,7 +13,6 @@ categories.workspace = true
 
 [dependencies]
 aerogram-core = { path = "../aerogram-core", version = "0.1.0" }
-ed25519-dalek = { workspace = true }
 rsa = { workspace = true }
 sha2 = { workspace = true }
 base64 = { workspace = true }
