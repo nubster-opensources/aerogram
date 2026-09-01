@@ -3,8 +3,8 @@
 //! Splits message persistence into two concerns: a metadata store backed by
 //! PostgreSQL (mailbox ownership, headers, flags, search indexing pointer)
 //! and a blob store holding the raw MIME bytes. The blob backend defaults
-//! to the local filesystem; the `s3` feature flag activates an
-//! S3-compatible backend through `aws-sdk-s3`.
+//! to the local filesystem; the `s3` feature flag gates a placeholder
+//! S3-compatible backend whose client is not wired up yet.
 
 use aerogram_core::{MailboxId, MessageId, TenantId};
 use serde::{Deserialize, Serialize};

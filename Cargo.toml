@@ -87,8 +87,6 @@ hickory-resolver = { version = "0.24", default-features = false, features = ["to
 
 # storage
 tantivy = "0.26"
-aws-sdk-s3 = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
-aws-config = { version = "1", default-features = false, features = ["rustls", "rt-tokio"] }
 
 # templating + cli
 askama = { version = "0.12", features = ["with-axum"] }
