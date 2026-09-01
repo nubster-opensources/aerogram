@@ -57,6 +57,7 @@ uuid = { version = "1", features = ["v4", "v7", "serde"] }
 chrono = { version = "0.4", default-features = false, features = ["serde", "clock"] }
 
 # http stack
+axum = { version = "0.7", features = ["macros", "multipart"] }
 tower = "0.5"
 tower-http = { version = "0.7", features = ["trace", "cors", "limit", "timeout"] }
 hyper = { version = "1", features = ["full"] }
