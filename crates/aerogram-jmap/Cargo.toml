@@ -17,7 +17,6 @@ aerogram-store = { path = "../aerogram-store", version = "0.1.0" }
 aerogram-search = { path = "../aerogram-search", version = "0.1.0" }
 aerogram-auth = { path = "../aerogram-auth", version = "0.1.0" }
 async-trait = { workspace = true }
-axum = { workspace = true }
 tower = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
