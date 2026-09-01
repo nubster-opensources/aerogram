@@ -70,7 +70,7 @@ sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio",
 rustls = "0.23"
 rustls-pemfile = "2"
 tokio-rustls = "0.26"
-ed25519-dalek = { version = "2", features = ["rand_core", "pkcs8"] }
+ed25519-dalek = { version = "3", features = ["rand_core", "pkcs8"] }
 rsa = { version = "0.9", features = ["sha2"] }
 sha2 = "0.11"
 hmac = "0.13"
