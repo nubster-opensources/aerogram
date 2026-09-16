@@ -11,4 +11,4 @@ permissions:
 
 jobs:
   verify:
-    uses: nubster-opensources/.github/.github/workflows/verify-action-pinning.yml@main
+    uses: nubster-opensources/.github/.github/workflows/verify-action-pinning.yml@54d80fc0452c42d8a85b858331e87e631069967f # v1.3.1
