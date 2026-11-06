@@ -84,11 +84,9 @@ lettre = { version = "0.11", default-features = false, features = ["builder", "t
 hickory-resolver = { version = "0.24", default-features = false, features = ["tokio-runtime", "system-config"] }
 
 # storage
-tantivy = "0.26"
+tantivy = "0.27"
 
 # templating + cli
-askama = { version = "0.12", features = ["with-axum"] }
-askama_axum = "0.4"
 clap = { version = "4", features = ["derive", "env"] }
 
 # misc
